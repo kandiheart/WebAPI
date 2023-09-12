@@ -1,0 +1,20 @@
+{
+  "Coffees": [
+    {
+      "Id": "ae463d15-09bd-4780-9b52-d946f9d1d383",
+      "Name": "Espresso",
+      "Characteristic": "strong, bitter",
+      "Strength": "strong",
+      "Cost": 3.5,
+      "ImageURL": "https://www.delonghi.com/Global/recipes/Coffee/espresso.png%22"
+    },
+    {
+      "Id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "Name": "Americano",
+      "Characteristic": "basic, easy",
+      "Strength": "weak to medium",
+      "Cost": 3.15,
+      "ImageURL": "https://www.roastycoffee.com/wp-content/uploads/emre-gencer-364602-unsplash-1.jpg%22"
+    }
+  ]
+}
