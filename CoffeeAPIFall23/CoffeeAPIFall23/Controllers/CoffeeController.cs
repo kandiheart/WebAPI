@@ -24,19 +24,24 @@ namespace CoffeeAPIFall23.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Coffee>>> Get() 
         {
-            if (_context.Coffees == null)
+            if (_context != null)
             {
-                return NotFound();
+                if (_context.Coffees == null)
+                {
+                    return NotFound();
+                }
+
+                var result = _context.Coffees;
+                return await _context.Coffees.ToListAsync();
             }
-
-            var result = _context.Coffees;
-            return await _context.Coffees.ToListAsync();
-
-            /*// read json file
-            string s = System.IO.File.ReadAllText("./coffees.json");
-            CoffeeList coffeeList = JsonConvert.DeserializeObject<CoffeeList>(s);
-
-            return coffeeList;*/
+            else
+            {
+                // read json file
+                string s = System.IO.File.ReadAllText("./coffees.json");
+                CoffeeList coffeeList = JsonConvert.DeserializeObject<CoffeeList>(s);
+                IEnumerable<Coffee> result = coffeeList.Coffees;
+                return Ok(result);
+            }
         }
 
         // GET api/<CoffeeController>/5
