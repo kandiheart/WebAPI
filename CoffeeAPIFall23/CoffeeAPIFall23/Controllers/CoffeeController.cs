@@ -48,35 +48,66 @@ namespace CoffeeAPIFall23.Controllers
         [HttpGet("{Id}")]
         public async Task<ActionResult<Coffee>> GetCoffee(Guid Id)
         {
-            string s = System.IO.File.ReadAllText("./coffees.json");
-            CoffeeList coffeeList = JsonConvert.DeserializeObject<CoffeeList>(s);
+            if (_context != null)
+            {
+                if (_context.Coffees == null)
+                {
+                    return NotFound();
+                }
 
-            // find coffee with matching Id
-            var inivCoffee = coffeeList.Coffees.FirstOrDefault(c=>c.Id==Id);
-            // if no coffee found, return 404
-            return Ok(inivCoffee);
+                var result = _context.Coffees.FirstOrDefault(c => c.Id == Id);
+                return await _context.Coffees.FirstOrDefaultAsync(c => c.Id == Id);
+            }
+            else
+            {
+                // read json file
+                string s = System.IO.File.ReadAllText("./coffees.json");
+                CoffeeList coffeeList = JsonConvert.DeserializeObject<CoffeeList>(s);
+
+                // find coffee with matching Id
+                var inivCoffee = coffeeList.Coffees.FirstOrDefault(c => c.Id == Id);
+                // if no coffee found, return 404
+                return Ok(inivCoffee);
+            }
         }
 
         // POST api/<CoffeeController>
         [HttpPost]
         public async Task<ActionResult<Coffee>> PostCoffee([FromBody] Coffee coffee)
         {
-            // read json file
-            string s = System.IO.File.ReadAllText("./coffees.json");
-            CoffeeList coffeeList = JsonConvert.DeserializeObject<CoffeeList>(s);
+            if (_context != null)
+            {
+                if (_context.Coffees == null)
+                {
+                    return NotFound();
+                }
 
-            // add coffee to list
-            coffeeList.Coffees.Add(coffee);
+                // add coffee to database
+                _context.Coffees.Add(coffee);
+                await _context.SaveChangesAsync();
 
-            // write json file
-            string newJson = JsonConvert.SerializeObject(coffeeList, Formatting.Indented);
-            System.IO.File.WriteAllText("./coffees.json", newJson);
+                // return 201 Created status code
+                return CreatedAtAction(nameof(GetCoffee), new { Id = coffee.Id }, coffee);
+            }
+            else
+            {
+                // read json file
+                string s = System.IO.File.ReadAllText("./coffees.json");
+                CoffeeList coffeeList = JsonConvert.DeserializeObject<CoffeeList>(s);
 
-            // return 201 Created status code
-            //return CreatedAtAction(nameof(GetCoffee), new { Id = coffee.Id }, coffee);
+                // add coffee to list
+                coffeeList.Coffees.Add(coffee);
 
-            // return 200 OK status code
-            return Ok(coffee);
+                // write json file
+                string newJson = JsonConvert.SerializeObject(coffeeList, Formatting.Indented);
+                System.IO.File.WriteAllText("./coffees.json", newJson);
+
+                // return 201 Created status code
+                return CreatedAtAction(nameof(GetCoffee), new { Id = coffee.Id }, coffee);
+
+                // return 200 OK status code
+                //return Ok(coffee);
+            }
         }
 
         // PUT api/<CoffeeController>/5
