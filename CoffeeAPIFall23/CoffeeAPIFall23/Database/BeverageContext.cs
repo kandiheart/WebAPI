@@ -5,17 +5,15 @@ namespace CoffeeAPIFall23.Database
 {
     public class BeverageContext: DbContext
     {
-        public BeverageContext()
-        {
-        }
 
         public BeverageContext(DbContextOptions<BeverageContext> options) : base(options)
         {
         }
 
+        public DbSet<Coffee> Coffees { get; set; } = default!;
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            base.OnConfiguring(optionsBuilder);
             var config = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")
@@ -26,9 +24,7 @@ namespace CoffeeAPIFall23.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.Entity<Coffee>().Property(c => c.Id).HasDefaultValueSql("NEWID()");
+            base.OnModelCreating(modelBuilder);
         }
-
-        public DbSet<Coffee> Coffees { get; set; }
     }
 }
