@@ -3477,7 +3477,7 @@
   },
   "packageFolders": {
     "C:\\Users\\Kandi Heart\\.nuget\\packages\\": {},
-    "C:\\Users\\Kandi Heart\\OneDrive\\Documents\\Candice's Homework\\NuGetPackages": {}
+    "D:\\SchoolPrograms\\VSShared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
@@ -3489,7 +3489,7 @@
       "outputPath": "C:\\Users\\Kandi Heart\\source\\repos\\WebAPI\\CoffeeAPIFall23\\CoffeeAPIFall23\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Users\\Kandi Heart\\OneDrive\\Documents\\Candice's Homework\\NuGetPackages"
+        "D:\\SchoolPrograms\\VSShared\\NuGetPackages"
       ],
       "configFilePaths": [
         "C:\\Users\\Kandi Heart\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3500,8 +3500,8 @@
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Users\\Kandi Heart\\.nuget": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -3570,7 +3570,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

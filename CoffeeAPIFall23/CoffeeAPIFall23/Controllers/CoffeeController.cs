@@ -56,7 +56,7 @@ namespace CoffeeAPIFall23.Controllers
                 }
 
                 var result = _context.Coffees.FirstOrDefault(c => c.Id == Id);
-                return await _context.Coffees.FirstOrDefaultAsync(c => c.Id == Id);
+                return Ok(await _context.Coffees.FirstOrDefaultAsync(c => c.Id == Id));
             }
             else
             {
