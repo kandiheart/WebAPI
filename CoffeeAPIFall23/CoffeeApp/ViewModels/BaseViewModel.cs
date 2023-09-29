@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CoffeeApp.Models;
+using CoffeeApp.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -10,7 +12,11 @@ namespace CoffeeApp.ViewModels
 {
     internal class BaseViewModel: INotifyPropertyChanged
     {
-        public BaseViewModel() { }
+        private readonly IDataStore<Item> _dataStore;
+        public BaseViewModel(IDataStore<Item> dataStore) 
+        {
+            _dataStore = dataStore;
+        }
 
         bool isBusy = false;
         public bool IsBusy {  get { return isBusy; } set { SetProperty(ref isBusy, value); } }
