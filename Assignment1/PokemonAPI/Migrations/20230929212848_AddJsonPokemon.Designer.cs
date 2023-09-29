@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PokemonAPI.Database;
 
@@ -11,9 +12,11 @@ using PokemonAPI.Database;
 namespace PokemonAPI.Migrations
 {
     [DbContext(typeof(PokemonContext))]
-    partial class PokemonContextModelSnapshot : ModelSnapshot
+    [Migration("20230929212848_AddJsonPokemon")]
+    partial class AddJsonPokemon
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

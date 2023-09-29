@@ -26,13 +26,13 @@ namespace PokemonAPI.Database
         {
             base.OnModelCreating(modelBuilder);
 
-            /*var jsonText = File.ReadAllText("./pokemon.json");
+            var jsonText = File.ReadAllText("./pokemon.json");
             var pokemons = JsonConvert.DeserializeObject<Pokemon.PokemonList>(jsonText);
 
             foreach (var pokemon in pokemons.Pokemons)
             {
                 modelBuilder.Entity<Pokemon>().HasData(pokemon);
-            }*/
+            }
         }
     }
 }
