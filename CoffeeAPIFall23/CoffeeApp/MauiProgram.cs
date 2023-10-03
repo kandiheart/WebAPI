@@ -23,13 +23,15 @@ namespace CoffeeApp
             // Register Services
             builder.Services.AddSingleton<IDataStore<Item>, MockDataStore>();
             builder.Services.AddSingleton<ICoffeeService, CoffeeService>();
-            //builder.Services.AddSingletone<ICoffeeStore, CoffeeStore>();
+            builder.Services.AddSingleton<SessionInfo>();
 
             // Register ViewModels
             builder.Services.AddSingleton<BaseViewModel>();
+            builder.Services.AddSingleton<BasePageViewModel>();
             builder.Services.AddSingleton<LoginViewModel>();
             builder.Services.AddSingleton<AboutViewModel>();
             builder.Services.AddSingleton<CoffeeListViewModel>();
+            builder.Services.AddSingleton<LoginPageViewModel>();
 
             // Register Views
             builder.Services.AddSingleton<MainPage>();

@@ -19,5 +19,28 @@ namespace CoffeeApp.ViewModels
         {
             Title = "Coffee List";
         }
+
+        public CoffeeListViewModel(ICoffeeService coffeeService)
+        {
+            _coffeeService = coffeeService;
+            Title = "Coffee List";
+            AddItemCommand = new Command(OnAddItem);
+        }
+
+        private async void OnAddItem(object obj)
+        {
+            // add view for newcoffeepage
+            //await Shell.Current.GoToAsync(nameof(NewCoffeePage));
+        }
+
+        public async Task OnAppearing()
+        {
+            if (Coffees == null || Coffees.Count == 0)
+            {
+                var coffees = await _coffeeService.GetCoffeesAsync();
+                SessionInfo.Instance.Coffees = coffees.ToList();
+                OnPropertyChanged(nameof(coffees));
+            }
+        }
     }
 }

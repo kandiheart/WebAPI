@@ -45,3 +45,15 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = CoffeeApp.Views.AboutPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\AboutPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\AboutPage.xaml
+
+[C:/Users/Kandi Heart/source/repos/WebAPI/CoffeeAPIFall23/CoffeeApp/Views/CoffeeListPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CoffeeApp.Views.CoffeeListPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\CoffeeListPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\CoffeeListPage.xaml
+
+[C:/Users/Kandi Heart/source/repos/WebAPI/CoffeeAPIFall23/CoffeeApp/Views/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = CoffeeApp.Views.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\LoginPage.xaml

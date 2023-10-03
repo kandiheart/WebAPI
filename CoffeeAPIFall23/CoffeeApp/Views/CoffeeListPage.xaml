@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CoffeeApp.Views.CoffeeListPage"
+             BindingContext="{Binding CoffeeListVM, Source={StaticResource Locator}}"
+             Title="CoffeeListPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <AbsoluteLayout HorizontalOptions="Center">
+            <Grid HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" FontSize="24" Text="Coffees" Margin="5,0,5,0" FontAttributes="Bold" />
+                <CollectionView x:Name="coffeeList" Grid.Row="1" ItemsSource="{Binding Coffees}" SelectionMode="Single">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                            <Grid Margin="5,5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80" />
+                                    <ColumnDefinition Width="160" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="80" />
+                                </Grid.RowDefinitions>
+                                <Image Grid.Row="0" Grid.Column="0" Source="{Binding ImageUrl}" Aspect="AspectFill" HeightRequest="60" WidthRequest="60" />
+                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" FontSize="24" FontAttributes="Bold" />
+                                    <Label Grid.Column="2" Text="{Binding CostString}" VerticalOptions="Center" HorizontalOptions="End" FontSize="24" FontAttributes="Bold" />
+                                </Grid>
+                        </ViewCell>
+                        </DataTemplate>
+                        <!--<DataTemplate>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Source="{Binding ImageUrl}" HeightRequest="60" WidthRequest="60" />
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" FontSize="24" FontAttributes="Bold" />
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Description}" FontSize="12" />
+                            </Grid>
+                        </DataTemplate>-->
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+            <ContentView AbsoluteLayout.LayoutBounds="1,1,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="All" IsVisible="{Binding IsBusy}" BackgroundColor="#22000000">
+                <!--<ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" AbsoluteLayout.LayoutBounds="0.5,0.5,100,100" AbsoluteLayout.LayoutFlags="PositionProportional" />-->
+                <ImageButton Source="add.png" AbsoluteLayout.LayoutBounds="1,0,AutoSize,AutoSize" AbsoluteLayout.LayoutFlags="All" Command="{Binding AddItemCommand}" BackgroundColor="OrangeRed" BorderColor="OrangeRed" HorizontalOptions="End" VerticalOptions="End" HeightRequest="50" WidthRequest="50" />
+            </ContentView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
