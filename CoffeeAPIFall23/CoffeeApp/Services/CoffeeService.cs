@@ -11,7 +11,7 @@ namespace CoffeeApp.Services
     internal class CoffeeService : ICoffeeService
     {
         // base URL for the Coffee API
-        const string BaseUrl = "";
+        const string BaseUrl = "https://8feb-47-12-200-11.ngrok-free.app/";
 
         public async Task<Coffee> AddCoffeeAsync(Coffee coffee)
         {

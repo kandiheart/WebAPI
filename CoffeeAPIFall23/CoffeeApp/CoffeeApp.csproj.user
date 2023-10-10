@@ -30,7 +30,13 @@
     <MauiXaml Update="Views\CoffeeListPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
+    <MauiXaml Update="Views\ItemDetailPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
     <MauiXaml Update="Views\LoginPage.xaml">
+      <SubType>Designer</SubType>
+    </MauiXaml>
+    <MauiXaml Update="Views\NewItemPage.xaml">
       <SubType>Designer</SubType>
     </MauiXaml>
   </ItemGroup>

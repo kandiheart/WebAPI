@@ -18,6 +18,6 @@ namespace CoffeeApp.ViewModels
 
         public CoffeeListViewModel CoffeeListVM => ServiceLocator.Current.GetInstance<CoffeeListViewModel>();
 
-        //add coffee view model
+        public AddCoffeeViewModel AddCoffeeVM => ServiceLocator.Current.GetInstance<AddCoffeeViewModel>();
     }
 }
