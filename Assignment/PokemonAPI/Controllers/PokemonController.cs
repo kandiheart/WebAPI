@@ -15,6 +15,8 @@ namespace PokemonAPI.Controllers
     {
         private readonly PokemonContext _context;
 
+        private PokemonList pokemons = new PokemonList();
+
         public PokemonController(PokemonContext context)
         {
             _context = context;
@@ -37,8 +39,8 @@ namespace PokemonAPI.Controllers
             else
             {
                 string s = System.IO.File.ReadAllText("./pokemon.json");
-                PokemonList pokemons = JsonConvert.DeserializeObject<PokemonList>(s);
-                return pokemons.Pokemons;
+                this.pokemons = JsonConvert.DeserializeObject<PokemonList>(s);
+                return this.pokemons.Pokemons;
             }
         }
 
@@ -59,9 +61,9 @@ namespace PokemonAPI.Controllers
             else
             {
                 string s = System.IO.File.ReadAllText("./pokemon.json");
-                PokemonList pokemons = JsonConvert.DeserializeObject<PokemonList>(s);
+                this.pokemons = JsonConvert.DeserializeObject<PokemonList>(s);
 
-                var pokemon = pokemons.Pokemons.FirstOrDefault(p => p.Id == Id);
+                var pokemon = this.pokemons.Pokemons.FirstOrDefault(p => p.Id == Id);
                 return Ok(pokemon);
             }
         }
@@ -85,14 +87,14 @@ namespace PokemonAPI.Controllers
             else
             {
                 string s = System.IO.File.ReadAllText("./pokemon.json");
-                PokemonList pokemons = JsonConvert.DeserializeObject<PokemonList>(s);
+                this.pokemons = JsonConvert.DeserializeObject<PokemonList>(s);
 
-                pokemons.Pokemons.Add(pokemon);
+                this.pokemons.Pokemons.Add(pokemon);
 
-                string newJson = JsonConvert.SerializeObject(pokemons, Formatting.Indented);
+                string newJson = JsonConvert.SerializeObject(this.pokemons, Formatting.Indented);
                 System.IO.File.WriteAllText("./pokemon.json", newJson);
 
-                return CreatedAtAction(nameof(GetPokemon), new { Id = pokemon.Id }, pokemon);
+                return CreatedAtAction(nameof(GetPokemon), new { pokemon.Id }, pokemon);
             }
         }
 
@@ -127,6 +129,7 @@ namespace PokemonAPI.Controllers
                 if (pokemon.Stamina != 0) Foundpokemon.Stamina = pokemon.Stamina;
                 if (pokemon.Region != "string") Foundpokemon.Region = pokemon.Region;
                 if (pokemon.DexNumber != 0) Foundpokemon.DexNumber = pokemon.DexNumber;
+                if (pokemon.ImageURL != "string") Foundpokemon.ImageURL = pokemon.ImageURL;
 
                 await _context.SaveChangesAsync();
                 return Foundpokemon;
@@ -134,9 +137,9 @@ namespace PokemonAPI.Controllers
             else
             {
                 string s = System.IO.File.ReadAllText("./pokemon.json");
-                PokemonList pokemons = JsonConvert.DeserializeObject<PokemonList>(s);
+                this.pokemons = JsonConvert.DeserializeObject<PokemonList>(s);
 
-                var Foundpokemon = pokemons.Pokemons.FirstOrDefault(p => p.Id == Id);
+                var Foundpokemon = this.pokemons.Pokemons.FirstOrDefault(p => p.Id == Id);
                 if (Foundpokemon == null)
                 {
                     return NotFound("Error updating data, Pokemon Id mismatch");
@@ -151,6 +154,7 @@ namespace PokemonAPI.Controllers
                 if (pokemon.Stamina != 0) Foundpokemon.Stamina = pokemon.Stamina;
                 if (pokemon.Region != "string") Foundpokemon.Region = pokemon.Region;
                 if (pokemon.DexNumber != 0) Foundpokemon.DexNumber = pokemon.DexNumber;
+                if (pokemon.ImageURL != "string") Foundpokemon.ImageURL = pokemon.ImageURL;
 
                 string newJson = JsonConvert.SerializeObject(pokemons, Formatting.Indented);
                 System.IO.File.WriteAllText("./pokemon.json", newJson);
@@ -183,16 +187,16 @@ namespace PokemonAPI.Controllers
             else
             {
                 string s = System.IO.File.ReadAllText("./pokemon.json");
-                PokemonList pokemons = JsonConvert.DeserializeObject<PokemonList>(s);
+                this.pokemons = JsonConvert.DeserializeObject<PokemonList>(s);
 
-                var Foundpokemon = pokemons.Pokemons.FirstOrDefault(p => p.Id == Id);
+                var Foundpokemon = this.pokemons.Pokemons.FirstOrDefault(p => p.Id == Id);
                 if (Foundpokemon == null)
                 {
                     return NotFound($"Pokemon with Id = {Id} not found");
                 }
 
                 pokemons.Pokemons.Remove(Foundpokemon);
-                string newJson = JsonConvert.SerializeObject(pokemons, Formatting.Indented);
+                string newJson = JsonConvert.SerializeObject(this.pokemons, Formatting.Indented);
                 System.IO.File.WriteAllText("./pokemon.json", newJson);
                 return Ok(Foundpokemon);
             }

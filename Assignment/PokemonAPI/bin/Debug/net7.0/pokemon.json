@@ -9,7 +9,8 @@
       "Defense": 175,
       "Stamina": 163,
       "Region": "Johto",
-      "DexNumber": 196
+      "DexNumber": 196,
+      "ImageURL": "https://img.pokemondb.net/artwork/espeon.jpg"
     },
     {
       "Id": "92c13c86-63f8-41ab-a3f3-8c1d44ff4050",
@@ -20,7 +21,8 @@
       "Defense": 240,
       "Stamina": 216,
       "Region": "Johto",
-      "DexNumber": 197
+      "DexNumber": 197,
+      "ImageURL": "https://img.pokemondb.net/artwork/umbreon.jpg"
     },
     {
       "Id": "45b9a683-22d5-4e97-8f2b-9dfc1b2c362e",
@@ -31,7 +33,8 @@
       "Defense": 150,
       "Stamina": 172,
       "Region": "Sinnoh",
-      "DexNumber": 478
+      "DexNumber": 478,
+      "ImageURL": "https://img.pokemondb.net/artwork/froslass.jpg"
     },
     {
       "Id": "f59a62fb-9e3e-4837-8a14-0d9063b27b7d",
@@ -42,7 +45,8 @@
       "Defense": 207,
       "Stamina": 225,
       "Region": "Johto",
-      "DexNumber": 248
+      "DexNumber": 248,
+      "ImageURL": "https://img.pokemondb.net/artwork/tyranitar.jpg"
     },
     {
       "Id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
@@ -53,7 +57,8 @@
       "Defense": 211,
       "Stamina": 205,
       "Region": "Unova",
-      "DexNumber": 643
+      "DexNumber": 643,
+      "ImageURL": "https://img.pokemondb.net/artwork/reshiram.jpg"
     }
   ]
 }

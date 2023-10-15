@@ -11,6 +11,7 @@
         public int Stamina { get; set; }
         public string Region { get; set; }
         public int DexNumber { get; set; }
+        public string ImageURL { get; set; }
 
         public Pokemon() { }
 
