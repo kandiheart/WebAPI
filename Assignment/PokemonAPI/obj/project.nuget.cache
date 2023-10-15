@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Qq9VvDRPwz50T/bl/j5krDBHt6KWqQq7sZD4pIYnDFXrAZn4T1EHGzbIdIM2o5wJEvwtar8sK1U4J5UV+asRAw==",
+  "dgSpecHash": "YmusIEXxvMjP7D/DIBHTa0M7OL9OMcEZSj4ktvifS5b7gNPcePQozO8NCVgFQpqGdV4E6FQHFPji99p9Yb+Okg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Kandi Heart\\source\\repos\\WebAPI\\Assignment1\\PokemonAPI\\PokemonAPI.csproj",
+  "projectFilePath": "C:\\Users\\Kandi Heart\\source\\repos\\WebAPI\\Assignment\\PokemonAPI\\PokemonAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kandi Heart\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Kandi Heart\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

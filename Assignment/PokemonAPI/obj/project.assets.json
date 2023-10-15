@@ -3482,11 +3482,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kandi Heart\\source\\repos\\WebAPI\\Assignment1\\PokemonAPI\\PokemonAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Kandi Heart\\source\\repos\\WebAPI\\Assignment\\PokemonAPI\\PokemonAPI.csproj",
       "projectName": "PokemonAPI",
-      "projectPath": "C:\\Users\\Kandi Heart\\source\\repos\\WebAPI\\Assignment1\\PokemonAPI\\PokemonAPI.csproj",
+      "projectPath": "C:\\Users\\Kandi Heart\\source\\repos\\WebAPI\\Assignment\\PokemonAPI\\PokemonAPI.csproj",
       "packagesPath": "C:\\Users\\Kandi Heart\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kandi Heart\\source\\repos\\WebAPI\\Assignment1\\PokemonAPI\\obj\\",
+      "outputPath": "C:\\Users\\Kandi Heart\\source\\repos\\WebAPI\\Assignment\\PokemonAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "D:\\SchoolPrograms\\VSShared\\NuGetPackages"
