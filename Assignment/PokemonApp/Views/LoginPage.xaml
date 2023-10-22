@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PokemonApp.Views.LoginPage"
+             xmlns:converters="clr-namespace:PokemonApp.Converters"
+             BindingContext="{Binding LoginVM, Source={StaticResource Locator}}"
+             Title="LoginPage">
+    
+    <ContentPage.Resources>
+        <converters:InverseBoolConverter x:Key="invBool" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid HorizontalOptions="Center" Margin="0,50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="150" />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+            <Entry x:Name="username" Text="{Binding Username}" Grid.Row="0" Placeholder="username" WidthRequest="200" />
+            <Entry x:Name="password" Text="{Binding Password}" Grid.Row="1" IsPassword="True" Placeholder="password" WidthRequest="200" />
+            <Button x:Name="login" Text="Login" Grid.Row="3" Command="{Binding LoginCommand}" WidthRequest="200" BackgroundColor="Blue" TextColor="White" 
+                 IsEnabled="{Binding LoggedIn, Converter={StaticResource invBool}}"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
