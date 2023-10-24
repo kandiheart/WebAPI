@@ -1,5 +1,6 @@
 ﻿using PokemonApp.Models;
 using PokemonApp.Services;
+using PokemonApp.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace PokemonApp.ViewModels
     internal class PokemonListViewModel: BaseViewModel
     {
         private readonly IPokemonService _pokemonService;
-        //private Pokemon _selectedPokemon;
+        
         public ICommand AddItemCommand { get; }
         public List<Pokemon> Pokemons => SessionInfo.Instance.Pokemons?.ToList();
 
@@ -25,7 +26,7 @@ namespace PokemonApp.ViewModels
 
         private async void OnAddItem(object obj)
         {
-            //await Shell.Current.GoToAsync(nameof(NewPokemonPage));
+            await Shell.Current.GoToAsync(nameof(NewPokemonPage));
         }
 
         public async Task OnAppearing() 

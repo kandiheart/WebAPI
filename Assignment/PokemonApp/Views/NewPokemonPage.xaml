@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PokemonApp.Views.NewPokemonPage"
+             BindingContext="{Binding AddPokemonVM, Source={StaticResource Locator}}"
+             Title="NewPokemonPage">
+
+    <ContentPage.Content>
+        <StackLayout Spacing="6" Padding="15" Margin="0,20">
+            <Label Text="{Binding AddAction}" FontSize="Large" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                </Grid.RowDefinitions>
+                
+                <Label Grid.Row="0" Grid.Column="0" Text="Name" VerticalOptions="Center" />
+                <Entry Grid.Row="0" Grid.Column="1" Text="{Binding Name}" />
+                
+                <Label Grid.Row="1" Grid.Column="0" Text="Type" VerticalOptions="Center" />
+                <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Type}" />
+
+                <Label Grid.Row="2" Grid.Column="0" Text="Description" VerticalOptions="Center" />
+                <Entry Grid.Row="2" Grid.Column="1" Text="{Binding Description}" />
+
+                <Label Grid.Row="3" Grid.Column="0" Text="Attack" VerticalOptions="Center" />
+                <Entry Grid.Row="3" Grid.Column="1" Text="{Binding Attack}" />
+
+                <Label Grid.Row="4" Grid.Column="0" Text="Defense" VerticalOptions="Center" />
+                <Entry Grid.Row="4" Grid.Column="1" Text="{Binding Defense}" />
+
+                <Label Grid.Row="5" Grid.Column="0" Text="Stamina" VerticalOptions="Center" />
+                <Entry Grid.Row="5" Grid.Column="1" Text="{Binding Stamina}" />
+
+                <Label Grid.Row="6" Grid.Column="0" Text="Region" VerticalOptions="Center" />
+                <Entry Grid.Row="6" Grid.Column="1" Text="{Binding Region}" />
+
+                <Label Grid.Row="7" Grid.Column="0" Text="Dex Number" VerticalOptions="Center" />
+                <Entry Grid.Row="7" Grid.Column="1" Text="{Binding DexNumber}" />
+
+                <Label Grid.Row="8" Grid.Column="0" Text="Image" VerticalOptions="Center" />
+                <Entry Grid.Row="8" Grid.Column="1" Text="{Binding ImageURL}" />
+
+            </Grid>
+            <StackLayout>
+                <Button HorizontalOptions="FillAndExpand" Text="Save" Command="{Binding SaveCommand}" />
+                <Button HorizontalOptions="FillAndExpand" Text="Cancel" Command="{Binding CancelCommand}" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

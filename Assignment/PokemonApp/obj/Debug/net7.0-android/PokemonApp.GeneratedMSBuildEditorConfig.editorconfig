@@ -55,3 +55,15 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = PokemonApp.Views.LoginPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\LoginPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\LoginPage.xaml
+
+[C:/Users/Kandi Heart/source/repos/WebAPI/Assignment/PokemonApp/Views/NewPokemonPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PokemonApp.Views.NewPokemonPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\NewPokemonPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\NewPokemonPage.xaml
+
+[C:/Users/Kandi Heart/source/repos/WebAPI/Assignment/PokemonApp/Views/PokemonsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PokemonApp.Views.PokemonsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\PokemonsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\PokemonsPage.xaml

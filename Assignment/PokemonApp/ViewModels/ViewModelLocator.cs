@@ -14,5 +14,10 @@ namespace PokemonApp.ViewModels
         }
 
         public LoginPageViewModel LoginVM => ServiceLocator.Current.GetInstance<LoginPageViewModel>();
+        public AboutViewModel AboutVM => ServiceLocator.Current.GetInstance<AboutViewModel>();
+
+
+        public PokemonListViewModel PokemonListVM => ServiceLocator.Current.GetInstance<PokemonListViewModel>();
+        public AddPokemonViewModel AddPokemonVM => ServiceLocator.Current.GetInstance<AddPokemonViewModel>();
     }
 }
