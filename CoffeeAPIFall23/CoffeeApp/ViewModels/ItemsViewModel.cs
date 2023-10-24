@@ -13,9 +13,8 @@ namespace CoffeeApp.ViewModels
 {
     internal class ItemsViewModel: BaseViewModel
     {
-        private Item _selectedItem;
-
         private IDataStore<Item> _dataStore;
+        private Item _selectedItem;
 
         public ObservableCollection<Item> Items { get; set; }
 
@@ -24,6 +23,8 @@ namespace CoffeeApp.ViewModels
         public Command AddItemCommand { get; set; }
 
         public Command<Item> ItemTapped { get; set; }
+        
+        public Item SelectedItem { get => _selectedItem; set { SetProperty(ref _selectedItem, value); OnItemSelected(value); } }
 
         public ItemsViewModel()
         {
@@ -73,6 +74,12 @@ namespace CoffeeApp.ViewModels
             {
                 IsBusy = false;
             }
+        }
+
+        public void OnAppearing()
+        {
+            IsBusy = true;
+            SelectedItem = null;
         }
     }
 }

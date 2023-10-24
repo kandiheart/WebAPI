@@ -9,6 +9,7 @@
     <Application.Resources>
         <viewmodels:ViewModelLocator x:Key="Locator" />
         
+        <!-- Resources were missing x:Class call on Colors.xaml & Styles.xaml, not setup automatically anymore -->
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
