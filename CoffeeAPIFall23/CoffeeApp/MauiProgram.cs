@@ -2,6 +2,7 @@
 using CoffeeApp.Services;
 using CoffeeApp.ViewModels;
 using CoffeeApp.Views;
+using CommonServiceLocator;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -21,22 +22,35 @@ namespace CoffeeApp
                 });
 
             // Register Services
+            builder.Services.AddSingleton<SessionInfo>();
             builder.Services.AddSingleton<IDataStore<Item>, MockDataStore>();
             builder.Services.AddSingleton<ICoffeeService, CoffeeService>();
-            builder.Services.AddSingleton<SessionInfo>();
+            
 
             // Register ViewModels
-            builder.Services.AddSingleton<BaseViewModel>();
-            builder.Services.AddSingleton<BasePageViewModel>();
+            builder.Services.AddTransient<BasePageViewModel, BasePageViewModel>();
+            builder.Services.AddTransient<BaseViewModel, BaseViewModel>();
             builder.Services.AddSingleton<LoginViewModel>();
-            builder.Services.AddSingleton<AboutViewModel>();
-            builder.Services.AddSingleton<CoffeeListViewModel>();
             builder.Services.AddSingleton<LoginPageViewModel>();
+            builder.Services.AddSingleton<AboutViewModel>();
+
+            builder.Services.AddSingleton<CoffeeListViewModel>();
+            builder.Services.AddSingleton<AddBeverageViewModel<Coffee>>();
+            builder.Services.AddSingleton<AddCoffeeViewModel>();
+
+            builder.Services.AddSingleton<ItemsViewModel>();
+            builder.Services.AddSingleton<ItemDetailViewModel>();            
 
             // Register Views
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<AboutPage>();
-            
+            builder.Services.AddSingleton<LoginPage>();
+
+            builder.Services.AddSingleton<CoffeeListPage>();
+
+            builder.Services.AddSingleton<ItemsPage>();
+            builder.Services.AddSingleton<ItemDetailPage>();
+                     
 
 
 #if DEBUG

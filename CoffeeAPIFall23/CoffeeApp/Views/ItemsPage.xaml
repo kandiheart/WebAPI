@@ -4,7 +4,6 @@
              x:Class="CoffeeApp.Views.ItemsPage"
              xmlns:vm="clr-namespace:CoffeeApp.ViewModels"
              xmlns:models="clr-namespace:CoffeeApp.Models"
-             BindingContext="{Binding ItemsVM, Source={StaticResource Locator}}"
              x:Name="BrowseItemsView"
              Title="{Binding Title}">
 

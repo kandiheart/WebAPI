@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CoffeeApp.Views.LoginPage"
              xmlns:converters="clr-namespace:CoffeeApp.Converters"
-             BindingContext="{Binding LoginVM, Source={StaticResource Locator}}"
              Title="LoginPage">
 
     <ContentPage.Resources>

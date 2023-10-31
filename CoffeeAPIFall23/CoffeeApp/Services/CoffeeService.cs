@@ -11,7 +11,7 @@ namespace CoffeeApp.Services
     internal class CoffeeService : ICoffeeService
     {
         // base URL for the Coffee API
-        const string BaseUrl = "https://8feb-47-12-200-11.ngrok-free.app/";
+        const string BaseUrl = "https://adb2-47-12-200-11.ngrok-free.app";
 
         public async Task<Coffee> AddCoffeeAsync(Coffee coffee)
         {
@@ -47,8 +47,18 @@ namespace CoffeeApp.Services
         {
             using (var client = new HttpClient())
             {
-                var json = await client.GetStringAsync($"{BaseUrl}/api/coffee");
-                return JsonConvert.DeserializeObject<IEnumerable<Coffee>>(json);
+                HttpResponseMessage response = await client.GetAsync($"{BaseUrl}/api/coffee");
+                // TODO: response is unsuccessful, receiving 502 Bad Gateway
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var json = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<IEnumerable<Coffee>>(json);
+                }
+                else
+                {
+                    return new List<Coffee>();
+                }
             }
         }
 

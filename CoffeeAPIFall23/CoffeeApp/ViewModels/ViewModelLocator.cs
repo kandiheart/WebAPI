@@ -14,12 +14,14 @@ namespace CoffeeApp.ViewModels
             
         }
 
-        public LoginPageViewModel LoginVM => ServiceLocator.Current.GetInstance<LoginPageViewModel>();
+        // ServiceLocator.Current.GetInstance<ViewModel>(); did not work because the provider is not set. Can use the code below instead.
 
-        public CoffeeListViewModel CoffeeListVM => ServiceLocator.Current.GetInstance<CoffeeListViewModel>();
+        //public LoginPageViewModel LoginVM => Application.Current.Handler.MauiContext.Services.GetService(typeof(LoginPageViewModel)) as LoginPageViewModel;
 
-        public AddCoffeeViewModel AddCoffeeVM => ServiceLocator.Current.GetInstance<AddCoffeeViewModel>();
+        //public CoffeeListViewModel CoffeeListVM => Application.Current.Handler.MauiContext.Services.GetService(typeof(CoffeeListViewModel)) as CoffeeListViewModel;
 
-        public ItemsViewModel ItemsVM => ServiceLocator.Current.GetInstance<ItemsViewModel>();
+        //public AddCoffeeViewModel AddCoffeeVM => Application.Current.Handler.MauiContext.Services.GetService(typeof(AddCoffeeViewModel)) as AddCoffeeViewModel;
+
+        //public ItemsViewModel ItemsVM => Application.Current.Handler.MauiContext.Services.GetService(typeof(ItemsViewModel)) as ItemsViewModel;
     }
 }

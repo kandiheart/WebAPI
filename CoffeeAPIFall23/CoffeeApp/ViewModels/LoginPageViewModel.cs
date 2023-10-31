@@ -1,5 +1,6 @@
 ﻿using CoffeeApp.Models;
 using CoffeeApp.Services;
+using CoffeeApp.Views;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -25,6 +26,44 @@ namespace CoffeeApp.ViewModels
         {
             _coffeeService = coffeeService;
             Username = GetUserName().Result;
+            LoginCommand = new Command(async () => 
+            { 
+                if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password))
+                {
+                    await Application.Current.MainPage.DisplayAlert("Error", "Username and Password are required", "OK");
+                    return;
+                }
+
+                try
+                {
+                    var result = await _coffeeService.GetCoffeesAsync();
+                    if (result != null)
+                    {
+                        SessionInfo.Instance.Coffees = result.ToList();
+
+                        SessionInfo.Instance.LoggedIn = true;
+                        await SecureStorage.SetAsync("username", Username);
+                        OnPropertyChanged(nameof(LoggedIn));
+                        await Application.Current.MainPage.DisplayAlert("Success", "You are now logged in", "OK");
+                        await Shell.Current.GoToAsync($"//{nameof(CoffeeListPage)}");
+
+                    }
+                    else
+                    {
+                        await Application.Current.MainPage.DisplayAlert("Error", "Login failed", "OK");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"Exception on login: {ex.Message}");
+                    await Application.Current.MainPage.DisplayAlert("Error", "Unable to connect", "OK");
+                }
+            });
+
+            CoffeeCommand = new Command(async () =>
+            {
+                await Shell.Current.GoToAsync($"{nameof(CoffeeListPage)}");
+            });
         }
 
         private static Task<string> GetUserName()
