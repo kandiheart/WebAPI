@@ -24,8 +24,8 @@ namespace PokemonApp
             builder.Services.AddSingleton<SessionInfo>();
 
             // Register ViewModels
-            builder.Services.AddSingleton<BaseViewModel>();
-            builder.Services.AddSingleton<BasePageViewModel>();
+            builder.Services.AddTransient<BaseViewModel, BaseViewModel>();
+            builder.Services.AddTransient<BasePageViewModel, BasePageViewModel>();
             builder.Services.AddSingleton<LoginPageViewModel>();
             builder.Services.AddSingleton<LoginViewModel>();
             builder.Services.AddSingleton<AboutViewModel>();

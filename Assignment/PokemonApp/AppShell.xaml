@@ -4,11 +4,63 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:PokemonApp"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:views="clr-namespace:PokemonApp.Views"
+    xmlns:controls="clr-namespace:PokemonApp.Controls"
+    Title="PokemonApp"
+    Shell.FlyoutBehavior="Flyout"
+    FlyoutBackgroundImage=""
+    FlyoutBackgroundImageAspect="AspectFill"
+    FlyoutHeaderBehavior="CollapseOnScroll">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <Shell.Resources>
+        <Style x:Key="BaseStyle" TargetType="Element">
+            <Setter Property="Shell.BackgroundColor" Value="#455a64" />
+            <Setter Property="Shell.ForegroundColor" Value="White" />
+            <Setter Property="Shell.TitleColor" Value="White" />
+            <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF" />
+            <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF" />
+            <Setter Property="Shell.TabBarBackgroundColor" Value="#455a64" />
+        </Style>
+
+        <Style TargetType="ShellItem" BasedOn="{StaticResource BaseStyle}" />
+        <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+        <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+
+        <Style x:Key="LoginShell" TargetType="Element" BasedOn="{StaticResource BaseStyle}" ApplyToDerivedTypes="True" >
+            <Setter Property="Shell.BackgroundColor" Value="#039be6" />
+        </Style>
+        <Style x:Key="ItemShell" TargetType="Element" BasedOn="{StaticResource BaseStyle}" ApplyToDerivedTypes="True" >
+            <Setter Property="Shell.BackgroundColor" Value="#689f39" />
+        </Style>
+        <Style x:Key="NewItemShell" TargetType="Element" BasedOn="{StaticResource BaseStyle}" ApplyToDerivedTypes="True" >
+            <Setter Property="Shell.BackgroundColor" Value="#546dfe" />
+        </Style>
+        <Style x:Key="AboutShell" TargetType="Element" BasedOn="{StaticResource BaseStyle}" ApplyToDerivedTypes="True" >
+            <Setter Property="Shell.BackgroundColor" Value="#96d1ff" />
+        </Style>
+    </Shell.Resources>
+
+    <Shell.FlyoutHeader>
+        <controls:FlyoutHeader />
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Route="" Title="Pokemon" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Route="login"
+                      Title="Login"
+                      Style="{StaticResource LoginShell}"
+                      ContentTemplate="{DataTemplate views:LoginPage}" />
+        <ShellContent Route="about"
+                      Title="About"
+                      Style="{StaticResource AboutShell}"
+                      ContentTemplate="{DataTemplate views:AboutPage}" />
+        <ShellContent Route="pokemons"
+                      Title="Pokemons"
+                      Style="{StaticResource ItemShell}"
+                      ContentTemplate="{DataTemplate views:PokemonsPage}" />
+        <ShellContent Route="newpokemon"
+                      Title="New Pokemon"
+                      Style="{StaticResource NewItemShell}"
+                      ContentTemplate="{DataTemplate views:NewPokemonPage}" />
+    </FlyoutItem>
 
 </Shell>

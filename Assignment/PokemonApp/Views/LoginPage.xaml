@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PokemonApp.Views.LoginPage"
              xmlns:converters="clr-namespace:PokemonApp.Converters"
-             BindingContext="{Binding LoginVM, Source={StaticResource Locator}}"
              Title="LoginPage">
     
     <ContentPage.Resources>
