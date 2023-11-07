@@ -49,6 +49,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\coffees.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Include="Resources\coffees.json">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	  </Content>
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Autofac" Version="7.1.0" />
 		<PackageReference Include="Autofac.Extras.CommonServiceLocator" Version="6.1.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />

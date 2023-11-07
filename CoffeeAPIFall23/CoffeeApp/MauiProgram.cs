@@ -23,9 +23,8 @@ namespace CoffeeApp
 
             // Register Services
             builder.Services.AddSingleton<SessionInfo>();
-            builder.Services.AddSingleton<IDataStore<Item>, MockDataStore>();
-            builder.Services.AddSingleton<ICoffeeService, CoffeeService>();
-            
+            builder.Services.AddTransient<IDataStore<Item>, MockDataStore>();
+            builder.Services.AddTransient<ICoffeeService, CoffeeService>();
 
             // Register ViewModels
             builder.Services.AddTransient<BasePageViewModel, BasePageViewModel>();
@@ -39,18 +38,7 @@ namespace CoffeeApp
             builder.Services.AddSingleton<AddCoffeeViewModel>();
 
             builder.Services.AddSingleton<ItemsViewModel>();
-            builder.Services.AddSingleton<ItemDetailViewModel>();            
-
-            // Register Views
-            builder.Services.AddSingleton<MainPage>();
-            builder.Services.AddSingleton<AboutPage>();
-            builder.Services.AddSingleton<LoginPage>();
-
-            builder.Services.AddSingleton<CoffeeListPage>();
-
-            builder.Services.AddSingleton<ItemsPage>();
-            builder.Services.AddSingleton<ItemDetailPage>();
-                     
+            builder.Services.AddSingleton<ItemDetailViewModel>();                    
 
 
 #if DEBUG
