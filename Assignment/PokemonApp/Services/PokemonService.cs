@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using PokemonApp.Models;
+using PokemonApp.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +9,26 @@ using System.Threading.Tasks;
 
 namespace PokemonApp.Services
 {
-    internal class PokemonService : IPokemonService
+    public class PokemonService : IPokemonService
     {
-        // base URL for the pokemon API, use ngrok
-        const string BaseUrl = "https://adb2-47-12-200-11.ngrok-free.app";
+        private HttpClient _client;
+        private readonly AppSettings _settings;
+        private readonly string BaseUrl;
+
+        public PokemonService(AppSettings settings)
+        {
+            _settings = settings ?? throw new ArgumentNullException(nameof(settings));
+            BaseUrl = _settings.APIURL;
+        }
+
+        public async void GetList()
+        {
+            var list = await GetPokemonsAsync();
+            if (list != null)
+                SessionInfo.Instance.Pokemons = list.ToList();
+
+            SessionInfo.Instance.LoggedIn = true;
+        }
 
         // Add Pokemon
         // Post
@@ -19,9 +36,9 @@ namespace PokemonApp.Services
         {
             string sPokemon = JsonConvert.SerializeObject(pokemon);
 
-            using (var client = new HttpClient())
+            using (_client)
             {
-                var response = await client.PostAsync(BaseUrl + "api/pokemon", new StringContent(sPokemon, Encoding.UTF8, "application/json"));
+                var response = await _client.PostAsync(BaseUrl + "/api/pokemon", new StringContent(sPokemon, Encoding.UTF8, "application/json"));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
@@ -38,9 +55,9 @@ namespace PokemonApp.Services
         // Delete
         public async Task<Pokemon> DeletePokemonAsync(int pokemonId)
         {
-            using (var client = new HttpClient())
+            using (_client)
             {
-                var response = await client.DeleteAsync(BaseUrl + "api/pokemon/" + pokemonId);
+                var response = await _client.DeleteAsync(BaseUrl + "/api/pokemon/" + pokemonId);
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
@@ -57,9 +74,9 @@ namespace PokemonApp.Services
         // Get
         public async Task<Pokemon> GetPokemonAsync(int pokemonId)
         {
-            using (var client = new HttpClient())
+            using (_client)
             {
-                var response = await client.GetAsync(BaseUrl + "api/pokemon/" + pokemonId);
+                var response = await _client.GetAsync(BaseUrl + "/api/pokemon/" + pokemonId);
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
@@ -76,16 +93,31 @@ namespace PokemonApp.Services
         // Get
         public async Task<IEnumerable<Pokemon>> GetPokemonsAsync()
         {
-            using (var client = new HttpClient())
+            using (_client = new HttpClient())
             {
-                var response = await client.GetAsync(BaseUrl + "api/pokemon");
-                if (response.IsSuccessStatusCode)
+                try
                 {
-                    var content = await response.Content.ReadAsStringAsync();
-                    return JsonConvert.DeserializeObject<IEnumerable<Pokemon>>(content);
+                    var apiUrl = new Uri(new Uri(BaseUrl), "api/Pokemon");
+                    var response = await _client.GetAsync(apiUrl);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var content = await response.Content.ReadAsStringAsync();
+                        IEnumerable<Pokemon> pokemons = JsonConvert.DeserializeObject<Pokemon[]>(content);
+                        return pokemons;
+                    }
+                    else
+                    {
+                        return new List<Pokemon>();
+                    }
                 }
-                else
+                catch (HttpRequestException ex)
                 {
+                    Console.WriteLine($"HTTP request failed: {ex.Message}");
+                    return new List<Pokemon>();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error: {ex.Message}");
                     return new List<Pokemon>();
                 }
             }
@@ -95,9 +127,9 @@ namespace PokemonApp.Services
         // Put
         public async Task<Pokemon> UpdatePokemonAsync(Pokemon pokemon)
         {
-            using (var client = new HttpClient())
+            using (_client)
             {
-                var response = await client.PutAsync(BaseUrl + "api/pokemon", new StringContent(JsonConvert.SerializeObject(pokemon), Encoding.UTF8, "application/json"));
+                var response = await _client.PutAsync(BaseUrl + "/api/pokemon", new StringContent(JsonConvert.SerializeObject(pokemon), Encoding.UTF8, "application/json"));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();

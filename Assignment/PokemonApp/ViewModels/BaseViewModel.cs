@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace PokemonApp.ViewModels
 {
-    internal class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged
     {
         public BaseViewModel() { }
 

@@ -20,6 +20,10 @@ namespace PokemonApp
                 });
 
             // Register Services
+            builder.Services.AddSingleton(new AppSettings
+            {
+                APIURL = "http://10.0.2.2:5249"
+            });
             builder.Services.AddSingleton<IPokemonService, PokemonService>();
             builder.Services.AddSingleton<SessionInfo>();
 

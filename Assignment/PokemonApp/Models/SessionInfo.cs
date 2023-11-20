@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PokemonApp.Models
 {
-    internal class SessionInfo
+    public class SessionInfo
     {
         public static SessionInfo _instance;
 
@@ -35,7 +35,7 @@ namespace PokemonApp.Models
                     return new List<Pokemon>();
                 return _pokemons.ToList();
             }
-            set { _pokemons.ToList(); }
+            set { _pokemons = value; }
         }
 
         private bool _loggedIn;

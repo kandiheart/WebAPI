@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PokemonApp.ViewModels
 {
-    internal class AddPokemonViewModel
+    public class AddPokemonViewModel
     {
         protected object Model;
         public string AddAction { get; set; }

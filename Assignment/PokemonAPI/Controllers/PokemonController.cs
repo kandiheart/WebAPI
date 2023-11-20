@@ -15,7 +15,7 @@ namespace PokemonAPI.Controllers
     {
         private readonly PokemonContext _context;
 
-        private PokemonList pokemons = new PokemonList();
+        private PokemonList? pokemons = new PokemonList();
 
         public PokemonController(PokemonContext context)
         {
@@ -40,7 +40,7 @@ namespace PokemonAPI.Controllers
             {
                 string s = System.IO.File.ReadAllText("./pokemon.json");
                 this.pokemons = JsonConvert.DeserializeObject<PokemonList>(s);
-                return this.pokemons.Pokemons;
+                return Ok(pokemons.Pokemons);
             }
         }
 

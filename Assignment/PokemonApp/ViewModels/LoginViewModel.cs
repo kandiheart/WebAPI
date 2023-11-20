@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PokemonApp.ViewModels
 {
-    internal class LoginViewModel: BaseViewModel
+    public class LoginViewModel: BaseViewModel
     {
         public Command LoginCommand { get; }
         public LoginViewModel()

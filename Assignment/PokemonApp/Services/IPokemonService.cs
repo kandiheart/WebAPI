@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PokemonApp.Services
 {
-    internal interface IPokemonService
+    public interface IPokemonService
     {
         Task<IEnumerable<Pokemon>> GetPokemonsAsync();
         Task<Pokemon> AddPokemonAsync(Pokemon pokemon);

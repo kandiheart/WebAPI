@@ -8,7 +8,7 @@
     xmlns:controls="clr-namespace:PokemonApp.Controls"
     Title="PokemonApp"
     Shell.FlyoutBehavior="Flyout"
-    FlyoutBackgroundImage=""
+    FlyoutBackgroundImage="background.png"
     FlyoutBackgroundImageAspect="AspectFill"
     FlyoutHeaderBehavior="CollapseOnScroll">
 

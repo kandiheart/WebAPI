@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PokemonApp.Models
 {
-    internal class Pokemon
+    public class Pokemon
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

@@ -1,5 +1,6 @@
 ﻿using PokemonApp.Models;
 using PokemonApp.Services;
+using PokemonApp.Views;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,7 +11,7 @@ using System.Windows.Input;
 
 namespace PokemonApp.ViewModels
 {
-    internal class LoginPageViewModel: BasePageViewModel
+    public class LoginPageViewModel: BasePageViewModel
     {
         public string Username { get; set; }
         public string Password { get; set; }
@@ -24,6 +25,36 @@ namespace PokemonApp.ViewModels
         {
             _pokemonService = pokemonService;
             Username = GetUserName().Result;
+            LoginCommand = new Command(async () =>
+            {
+                if (string.IsNullOrEmpty(Password) || Password.Length < 5)
+                {
+                    //await MainPage.DisplayAlert("Logn Failure", "Login Failed, please enter a valid password", "Ok");
+                    return;
+                }
+
+                try
+                {
+                    await SecureStorage.SetAsync("UserName", Username);
+
+                    var list = await _pokemonService.GetPokemonsAsync();
+                    if (list != null)
+                        SessionInfo.Instance.Pokemons = list.ToList();
+
+                    SessionInfo.Instance.LoggedIn = true;
+                    OnPropertyChanged(nameof(LoggedIn));
+
+                    await Shell.Current.GoToAsync($"//{nameof(PokemonsPage)}");
+
+                    //  await MainPage.Navigation.PushAsync(new MainPage());
+
+                }
+                catch (System.Exception ex)
+                {
+                    Debug.WriteLine(ex.StackTrace);
+                    // await MainPage.DisplayAlert("Logn Failure", "Login Failed, please enter a valid password", "Ok");
+                }
+            });
         }
 
         private static Task<string> GetUserName()

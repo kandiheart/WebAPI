@@ -1,4 +1,5 @@
 ﻿using CommonServiceLocator;
+using PokemonApp.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace PokemonApp.ViewModels
 {
     internal class ViewModelLocator
     {
+        //private static readonly IPokemonService Service = ServiceLocator.Current.GetInstance<IPokemonService>();
         public ViewModelLocator()
         {
         }
@@ -18,5 +20,7 @@ namespace PokemonApp.ViewModels
         public AboutViewModel AboutVM => ServiceLocator.Current.GetInstance<AboutViewModel>();
         public PokemonListViewModel PokemonListVM => ServiceLocator.Current.GetInstance<PokemonListViewModel>();
         public AddPokemonViewModel AddPokemonVM => ServiceLocator.Current.GetInstance<AddPokemonViewModel>();*/
+
+
     }
 }

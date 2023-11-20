@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace PokemonApp.ViewModels
 {
-    internal class AboutViewModel: BaseViewModel
+    public class AboutViewModel: BaseViewModel
     {
         public AboutViewModel() : base()
         {

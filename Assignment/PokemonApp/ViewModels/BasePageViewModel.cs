@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PokemonApp.ViewModels
 {
-    internal class BasePageViewModel : INotifyPropertyChanged
+    public class BasePageViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
