@@ -35,6 +35,12 @@
         <Style x:Key="NewItemShell" TargetType="Element" BasedOn="{StaticResource BaseStyle}" ApplyToDerivedTypes="True" >
             <Setter Property="Shell.BackgroundColor" Value="#546dfe" />
         </Style>
+        <Style x:Key="EditItemShell" TargetType="SelectableItemsView" BasedOn="{StaticResource BaseStyle}" ApplyToDerivedTypes="True" >
+            <Setter Property="Shell.BackgroundColor" Value="#e5e500" />
+        </Style>
+        <Style x:Key="DeleteItemShell" TargetType="Element" BasedOn="{StaticResource BaseStyle}" ApplyToDerivedTypes="True" >
+            <Setter Property="Shell.BackgroundColor" Value="#d32f2f" />
+        </Style>
         <Style x:Key="AboutShell" TargetType="Element" BasedOn="{StaticResource BaseStyle}" ApplyToDerivedTypes="True" >
             <Setter Property="Shell.BackgroundColor" Value="#96d1ff" />
         </Style>
@@ -53,6 +59,7 @@
                       Title="About"
                       Style="{StaticResource AboutShell}"
                       ContentTemplate="{DataTemplate views:AboutPage}" />
+        
         <ShellContent Route="pokemons"
                       Title="Pokemons"
                       Style="{StaticResource ItemShell}"
@@ -61,6 +68,18 @@
                       Title="New Pokemon"
                       Style="{StaticResource NewItemShell}"
                       ContentTemplate="{DataTemplate views:NewPokemonPage}" />
+        <!--<ShellContent Route="pokemon"
+                      Title="Pokemon"
+                      Style="{StaticResource ItemShell}"
+                      ContentTemplate="{DataTemplate views:PokemonPage}" />
+        <ShellContent Route="editpokemon"
+                      Title="Edit Pokemon"
+                      Style="{StaticResource EditItemShell}"
+                      ContentTemplate="{DataTemplate views:EditPokemonPage}" />
+        <ShellContent Route="deletepokemon"
+                      Title="Delete Pokemon"
+                      Style="{StaticResource DeleteItemShell}"
+                      ContentTemplate="{DataTemplate views:DeletePokemonPage}" />-->
     </FlyoutItem>
 
 </Shell>

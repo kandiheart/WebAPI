@@ -15,24 +15,22 @@
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" FontSize="24" Text="Pokemons" Margin="5,0,5,0" FontAttributes="Bold" />
-                <CollectionView x:Name="pokemonList" Grid.Row="1" ItemsSource="{Binding Pokemons}" SelectionMode="Single">
+                <CollectionView x:Name="Pokemons" Grid.Row="1" ItemsSource="{Binding Pokemons}" SelectionMode="Single">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
-                                <Grid Margin="5,5">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="80" />
-                                        <ColumnDefinition Width="160" />
-                                        <ColumnDefinition Width="*" />
-                                    </Grid.ColumnDefinitions>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="80" />
-                                    </Grid.RowDefinitions>
-                                    <Image Grid.Row="0" Grid.Column="0" Source="{Binding ImageURL}" Aspect="AspectFill" HeightRequest="60" WidthRequest="60" />
-                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" FontSize="24" VerticalOptions="Center" FontAttributes="Bold" />
-                                    <Label Grid.Row="0" Grid.Column="2" Text="{Binding DexNumber}" FontSize="18" VerticalOptions="Center" HorizontalOptions="End" FontAttributes="Bold" />
-                                </Grid>
-                            </ViewCell>
+                            <Grid Margin="5,5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80" />
+                                    <ColumnDefinition Width="160" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="80" />
+                                </Grid.RowDefinitions>
+                                <Image Grid.RowSpan="2" Source="{Binding ImageURL}" Aspect="AspectFill" HeightRequest="80" WidthRequest="60" />
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" FontSize="24" VerticalOptions="Center" FontAttributes="Bold" />
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding DexNumber}" FontSize="18" VerticalOptions="Center" HorizontalOptions="End" FontAttributes="Bold" />
+                            </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>

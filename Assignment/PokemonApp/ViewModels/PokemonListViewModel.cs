@@ -3,6 +3,7 @@ using PokemonApp.Services;
 using PokemonApp.Views;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,24 +16,25 @@ namespace PokemonApp.ViewModels
         private readonly IPokemonService _pokemonService;
         
         public ICommand AddItemCommand { get; }
-        public IList<Pokemon> Pokemons { get; set; }
+        public IEnumerable<Pokemon> Pokemons { get; set; }
 
         public PokemonListViewModel(IPokemonService pokemonService)
         {
             _pokemonService = pokemonService;
             Title = "Pokemon List";
             AddItemCommand = new Command(OnAddItem);
-            _ = OnAppearing();
+            Pokemons = SessionInfo.Instance.Pokemons;
+            //OnAppearing();
         }
 
         private async void OnAddItem(object obj)
         {
-            await Shell.Current.GoToAsync(nameof(NewPokemonPage));
+            await Shell.Current.GoToAsync("//newpokemon");
         }
 
-        public async Task OnAppearing()
+        public async void OnAppearing()
         {
-            if (Pokemons == null || Pokemons.Count == 0)
+            if (Pokemons == null)
             {
                 try
                 {
@@ -41,11 +43,13 @@ namespace PokemonApp.ViewModels
                     if (list != null)
                     {
                         SessionInfo.Instance.Pokemons = list.ToList();
-                        Pokemons = SessionInfo.Instance.Pokemons;
-                        OnPropertyChanged(nameof(Pokemons));
+                        Pokemons = new ObservableCollection<Pokemon>(list);
+                        //OnPropertyChanged(nameof(Pokemons));
                     }
 
                     SessionInfo.Instance.LoggedIn = true;
+
+                    await Shell.Current.GoToAsync("//pokemons");
                 }
                 catch (Exception ex)
                 {

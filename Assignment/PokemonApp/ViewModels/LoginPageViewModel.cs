@@ -1,4 +1,6 @@
-﻿using PokemonApp.Models;
+﻿using Android.Content.Res;
+using AndroidX.Navigation;
+using PokemonApp.Models;
 using PokemonApp.Services;
 using PokemonApp.Views;
 using System;
@@ -24,14 +26,13 @@ namespace PokemonApp.ViewModels
         public LoginPageViewModel(IPokemonService pokemonService)
         {
             _pokemonService = pokemonService;
-            Username = GetUserName().Result;
             LoginCommand = new Command(async () =>
             {
-                if (string.IsNullOrEmpty(Password) || Password.Length < 5)
+                /*if (string.IsNullOrEmpty(Password) || Password.Length < 5)
                 {
-                    //await MainPage.DisplayAlert("Logn Failure", "Login Failed, please enter a valid password", "Ok");
+                    //await Page.DisplayAlert("Logn Failure", "Login Failed, please enter a valid password", "Ok");
                     return;
-                }
+                }*/
 
                 try
                 {
@@ -42,12 +43,10 @@ namespace PokemonApp.ViewModels
                         SessionInfo.Instance.Pokemons = list.ToList();
 
                     SessionInfo.Instance.LoggedIn = true;
-                    OnPropertyChanged(nameof(LoggedIn));
+                    //OnPropertyChanged(nameof(LoggedIn));
 
-                    await Shell.Current.GoToAsync($"//{nameof(PokemonsPage)}");
-
-                    //  await MainPage.Navigation.PushAsync(new MainPage());
-
+                    // await Shell.Current.GoToAsync(nameof(PokemonsPage));
+                    await Shell.Current.GoToAsync("//pokemons");
                 }
                 catch (System.Exception ex)
                 {
@@ -55,6 +54,8 @@ namespace PokemonApp.ViewModels
                     // await MainPage.DisplayAlert("Logn Failure", "Login Failed, please enter a valid password", "Ok");
                 }
             });
+
+            //Username = GetUserName().Result;
         }
 
         private static Task<string> GetUserName()

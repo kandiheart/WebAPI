@@ -1,3 +1,4 @@
+using PokemonApp.Services;
 using PokemonApp.ViewModels;
 
 namespace PokemonApp.Views;
@@ -5,9 +6,13 @@ namespace PokemonApp.Views;
 public partial class LoginPage : ContentPage
 {
 	private readonly LoginPageViewModel _viewModel;
+    private readonly IPokemonService _service;
 	public LoginPage()
 	{
-		InitializeComponent();
-		BindingContext = _viewModel = MauiProgram.CreateMauiApp().Services.GetService<LoginPageViewModel>();
-	}
+        _service = MauiProgram.CreateMauiApp().Services.GetService<IPokemonService>();
+        InitializeComponent();
+        _viewModel = new LoginPageViewModel(_service);
+
+        BindingContext = _viewModel;
+    }
 }

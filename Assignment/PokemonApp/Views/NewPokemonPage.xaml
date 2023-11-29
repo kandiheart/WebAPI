@@ -7,10 +7,10 @@
     <ContentPage.Content>
         <StackLayout Spacing="6" Padding="15" Margin="0,20">
             <Label Text="{Binding AddAction}" FontSize="Large" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center" />
-            <Grid>
+            <Grid Margin="30,10">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="2" />
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="200" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40" />
@@ -25,36 +25,36 @@
                 </Grid.RowDefinitions>
                 
                 <Label Grid.Row="0" Grid.Column="0" Text="Name" VerticalOptions="Center" />
-                <Entry Grid.Row="0" Grid.Column="1" Text="{Binding Name}" />
+                <Entry Grid.Row="0" Grid.Column="1" Text="{Binding Name}" Placeholder="Name" />
                 
                 <Label Grid.Row="1" Grid.Column="0" Text="Type" VerticalOptions="Center" />
-                <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Type}" />
+                <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Type}" Placeholder="Pokemon Type" />
 
                 <Label Grid.Row="2" Grid.Column="0" Text="Description" VerticalOptions="Center" />
-                <Entry Grid.Row="2" Grid.Column="1" Text="{Binding Description}" />
+                <Entry Grid.Row="2" Grid.Column="1" Text="{Binding Description}" Placeholder="Pokedex Description" />
 
                 <Label Grid.Row="3" Grid.Column="0" Text="Attack" VerticalOptions="Center" />
-                <Entry Grid.Row="3" Grid.Column="1" Text="{Binding Attack}" />
+                <Entry Grid.Row="3" Grid.Column="1" Text="{Binding Attack}" Keyboard="Numeric" />
 
                 <Label Grid.Row="4" Grid.Column="0" Text="Defense" VerticalOptions="Center" />
-                <Entry Grid.Row="4" Grid.Column="1" Text="{Binding Defense}" />
+                <Entry Grid.Row="4" Grid.Column="1" Text="{Binding Defense}" Keyboard="Numeric" />
 
                 <Label Grid.Row="5" Grid.Column="0" Text="Stamina" VerticalOptions="Center" />
-                <Entry Grid.Row="5" Grid.Column="1" Text="{Binding Stamina}" />
+                <Entry Grid.Row="5" Grid.Column="1" Text="{Binding Stamina}" Keyboard="Numeric"/>
 
                 <Label Grid.Row="6" Grid.Column="0" Text="Region" VerticalOptions="Center" />
-                <Entry Grid.Row="6" Grid.Column="1" Text="{Binding Region}" />
+                <Entry Grid.Row="6" Grid.Column="1" Text="{Binding Region}" Placeholder="Region" />
 
                 <Label Grid.Row="7" Grid.Column="0" Text="Dex Number" VerticalOptions="Center" />
-                <Entry Grid.Row="7" Grid.Column="1" Text="{Binding DexNumber}" />
+                <Entry Grid.Row="7" Grid.Column="1" Text="{Binding DexNumber}" Keyboard="Numeric"/>
 
                 <Label Grid.Row="8" Grid.Column="0" Text="Image" VerticalOptions="Center" />
-                <Entry Grid.Row="8" Grid.Column="1" Text="{Binding ImageURL}" />
+                <Entry Grid.Row="8" Grid.Column="1" Text="{Binding ImageURL}" Placeholder="https://images.gameinfo.io/pokemon/256/p143f157.webp"/>
 
             </Grid>
             <StackLayout>
-                <Button HorizontalOptions="FillAndExpand" Text="Save" Command="{Binding SaveCommand}" />
-                <Button HorizontalOptions="FillAndExpand" Text="Cancel" Command="{Binding CancelCommand}" />
+                <Button HorizontalOptions="FillAndExpand" Text="Save" Command="{Binding SaveCommand}" Margin="10,15" />
+                <Button HorizontalOptions="FillAndExpand" Text="Cancel" Command="{Binding CancelCommand}" Margin="10,15" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

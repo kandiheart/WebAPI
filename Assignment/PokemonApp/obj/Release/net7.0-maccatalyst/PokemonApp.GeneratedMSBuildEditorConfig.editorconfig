@@ -1,0 +1,71 @@
+is_global = true
+build_property.TargetFramework = net7.0-maccatalyst
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = PokemonApp
+build_property.ProjectDir = C:\Users\Kandi Heart\source\repos\WebAPI\Assignment\PokemonApp\
+
+[C:/Users/Kandi Heart/source/repos/WebAPI/Assignment/PokemonApp/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PokemonApp.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/Kandi Heart/source/repos/WebAPI/Assignment/PokemonApp/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PokemonApp.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/Kandi Heart/source/repos/WebAPI/Assignment/PokemonApp/Controls/FlyoutHeader.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PokemonApp.Controls.FlyoutHeader.xaml
+build_metadata.AdditionalFiles.TargetPath = Controls\FlyoutHeader.xaml
+build_metadata.AdditionalFiles.RelativePath = Controls\FlyoutHeader.xaml
+
+[C:/Users/Kandi Heart/source/repos/WebAPI/Assignment/PokemonApp/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PokemonApp.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/Kandi Heart/source/repos/WebAPI/Assignment/PokemonApp/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PokemonApp.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/Kandi Heart/source/repos/WebAPI/Assignment/PokemonApp/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PokemonApp.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/Kandi Heart/source/repos/WebAPI/Assignment/PokemonApp/Views/AboutPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PokemonApp.Views.AboutPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\AboutPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\AboutPage.xaml
+
+[C:/Users/Kandi Heart/source/repos/WebAPI/Assignment/PokemonApp/Views/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PokemonApp.Views.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\LoginPage.xaml
+
+[C:/Users/Kandi Heart/source/repos/WebAPI/Assignment/PokemonApp/Views/NewPokemonPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PokemonApp.Views.NewPokemonPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\NewPokemonPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\NewPokemonPage.xaml
+
+[C:/Users/Kandi Heart/source/repos/WebAPI/Assignment/PokemonApp/Views/PokemonsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = PokemonApp.Views.PokemonsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\PokemonsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\PokemonsPage.xaml

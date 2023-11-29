@@ -11,7 +11,7 @@ namespace PokemonApp.Services
 {
     public class PokemonService : IPokemonService
     {
-        private HttpClient _client;
+        private HttpClient _client = new HttpClient();
         private readonly AppSettings _settings;
         private readonly string BaseUrl;
 
@@ -19,15 +19,6 @@ namespace PokemonApp.Services
         {
             _settings = settings ?? throw new ArgumentNullException(nameof(settings));
             BaseUrl = _settings.APIURL;
-        }
-
-        public async void GetList()
-        {
-            var list = await GetPokemonsAsync();
-            if (list != null)
-                SessionInfo.Instance.Pokemons = list.ToList();
-
-            SessionInfo.Instance.LoggedIn = true;
         }
 
         // Add Pokemon
@@ -38,7 +29,7 @@ namespace PokemonApp.Services
 
             using (_client)
             {
-                var response = await _client.PostAsync(BaseUrl + "/api/pokemon", new StringContent(sPokemon, Encoding.UTF8, "application/json"));
+                var response = await _client.PostAsync(BaseUrl + "/api/Pokemon", new StringContent(sPokemon, Encoding.UTF8, "application/json"));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
@@ -57,7 +48,7 @@ namespace PokemonApp.Services
         {
             using (_client)
             {
-                var response = await _client.DeleteAsync(BaseUrl + "/api/pokemon/" + pokemonId);
+                var response = await _client.DeleteAsync(BaseUrl + "/api/Pokemon/" + pokemonId);
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
@@ -76,7 +67,7 @@ namespace PokemonApp.Services
         {
             using (_client)
             {
-                var response = await _client.GetAsync(BaseUrl + "/api/pokemon/" + pokemonId);
+                var response = await _client.GetAsync(BaseUrl + "/api/Pokemon/" + pokemonId);
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();
@@ -93,12 +84,12 @@ namespace PokemonApp.Services
         // Get
         public async Task<IEnumerable<Pokemon>> GetPokemonsAsync()
         {
-            using (_client = new HttpClient())
+            using (_client)
             {
                 try
                 {
-                    var apiUrl = new Uri(new Uri(BaseUrl), "api/Pokemon");
-                    var response = await _client.GetAsync(apiUrl);
+                    string apiUrl = "/api/Pokemon";
+                    var response = await _client.GetAsync(BaseUrl + apiUrl);
                     if (response.IsSuccessStatusCode)
                     {
                         var content = await response.Content.ReadAsStringAsync();
@@ -129,7 +120,7 @@ namespace PokemonApp.Services
         {
             using (_client)
             {
-                var response = await _client.PutAsync(BaseUrl + "/api/pokemon", new StringContent(JsonConvert.SerializeObject(pokemon), Encoding.UTF8, "application/json"));
+                var response = await _client.PutAsync(BaseUrl + "/api/Pokemon", new StringContent(JsonConvert.SerializeObject(pokemon), Encoding.UTF8, "application/json"));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();

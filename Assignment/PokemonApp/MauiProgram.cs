@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.Maui.Hosting;
 using PokemonApp.Models;
 using PokemonApp.Services;
 using PokemonApp.ViewModels;
@@ -19,6 +20,8 @@ namespace PokemonApp
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            
+
             // Register Services
             builder.Services.AddSingleton(new AppSettings
             {
@@ -27,7 +30,7 @@ namespace PokemonApp
             builder.Services.AddSingleton<IPokemonService, PokemonService>();
             builder.Services.AddSingleton<SessionInfo>();
 
-            // Register ViewModels
+            /*// Register ViewModels
             builder.Services.AddTransient<BaseViewModel, BaseViewModel>();
             builder.Services.AddTransient<BasePageViewModel, BasePageViewModel>();
             builder.Services.AddSingleton<LoginPageViewModel>();
@@ -46,7 +49,7 @@ namespace PokemonApp
             builder.Services.AddSingleton<NewPokemonPage>();
             //builder.Services.AddSingleton<PokemonDetailPage>();
             //builder.Services.AddSingleton<EditPokemonPage>();
-            //builder.Services.AddSingleton<DeletePokemonPage>();
+            //builder.Services.AddSingleton<DeletePokemonPage>();*/
 
 #if DEBUG
             builder.Logging.AddDebug();

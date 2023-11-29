@@ -33,7 +33,7 @@
       "launchBrowser": true,
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
       "environmentVariables": {
-        "ASPNETCORE_URLS": "https://+:8080;http://+:3000"
+        "ASPNETCORE_URLS": "https://+:443;http://+:80"
       },
       "publishAllPorts": true,
       "useSSL": true
