@@ -12,8 +12,8 @@ namespace PokemonApp.Services
         Task<IEnumerable<Pokemon>> GetPokemonsAsync();
         Task<Pokemon> AddPokemonAsync(Pokemon pokemon);
         Task<Pokemon> UpdatePokemonAsync(Pokemon pokemon);
-        Task<Pokemon> DeletePokemonAsync(int pokemonId);
-        Task<Pokemon> GetPokemonAsync(int pokemonId);
+        Task<Pokemon> DeletePokemonAsync(Guid pokemonId);
+        Task<Pokemon> GetPokemonAsync(Guid pokemonId);
 
     }
 }

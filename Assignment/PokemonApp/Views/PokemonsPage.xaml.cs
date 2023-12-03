@@ -6,15 +6,21 @@ namespace PokemonApp.Views;
 
 public partial class PokemonsPage : ContentPage
 {
-	private readonly PokemonListViewModel _viewModel;
-	private readonly IPokemonService _service;
-
-	public PokemonsPage()
+	public PokemonsPage(PokemonListViewModel viewModel)
 	{
-		_service = MauiProgram.CreateMauiApp().Services.GetService<IPokemonService>();
 		InitializeComponent();
-		_viewModel = new PokemonListViewModel(_service);
-		
-        BindingContext = _viewModel;
+
+		BindingContext = viewModel;
+    }
+
+    private async void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    {
+        var pokemon = ((VisualElement)sender).BindingContext as Pokemon;
+        if (pokemon == null)
+            return;
+        await Shell.Current.GoToAsync(nameof(EditPokemonPage), true, new Dictionary<string, object>
+        {
+            { "Pokemon", pokemon }
+        });
     }
 }

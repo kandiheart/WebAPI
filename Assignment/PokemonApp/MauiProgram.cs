@@ -30,26 +30,14 @@ namespace PokemonApp
             builder.Services.AddSingleton<IPokemonService, PokemonService>();
             builder.Services.AddSingleton<SessionInfo>();
 
-            /*// Register ViewModels
-            builder.Services.AddTransient<BaseViewModel, BaseViewModel>();
-            builder.Services.AddTransient<BasePageViewModel, BasePageViewModel>();
-            builder.Services.AddSingleton<LoginPageViewModel>();
-            builder.Services.AddSingleton<LoginViewModel>();
-            builder.Services.AddSingleton<AboutViewModel>();
+            builder.Services.AddTransient<PokemonsPage> ();
+            builder.Services.AddTransient<PokemonListViewModel> ();
 
-            builder.Services.AddSingleton<PokemonListViewModel>();
-            builder.Services.AddSingleton<AddPokemonViewModel>();
+            builder.Services.AddTransient<NewPokemonPage> ();
+            builder.Services.AddTransient<AddPokemonViewModel> ();
 
-            // Register Views
-            builder.Services.AddSingleton<MainPage>();
-            builder.Services.AddSingleton<LoginPage>();
-            builder.Services.AddSingleton<AboutPage>();
-
-            builder.Services.AddSingleton<PokemonsPage>();
-            builder.Services.AddSingleton<NewPokemonPage>();
-            //builder.Services.AddSingleton<PokemonDetailPage>();
-            //builder.Services.AddSingleton<EditPokemonPage>();
-            //builder.Services.AddSingleton<DeletePokemonPage>();*/
+            builder.Services.AddTransient<EditPokemonPage> ();
+            builder.Services.AddTransient<PokemonDetailViewModel> ();
 
 #if DEBUG
             builder.Logging.AddDebug();

@@ -1,14 +1,6 @@
-﻿using Android.Content.Res;
-using AndroidX.Navigation;
-using PokemonApp.Models;
+﻿using PokemonApp.Models;
 using PokemonApp.Services;
-using PokemonApp.Views;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace PokemonApp.ViewModels

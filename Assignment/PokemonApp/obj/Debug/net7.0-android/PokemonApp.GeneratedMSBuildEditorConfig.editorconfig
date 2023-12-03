@@ -56,12 +56,6 @@ build_metadata.AdditionalFiles.ManifestResourceName = PokemonApp.Views.AboutPage
 build_metadata.AdditionalFiles.TargetPath = Views\AboutPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\AboutPage.xaml
 
-[C:/Users/Kandi Heart/source/repos/WebAPI/Assignment/PokemonApp/Views/DeletePokemonPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = PokemonApp.Views.DeletePokemonPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\DeletePokemonPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\DeletePokemonPage.xaml
-
 [C:/Users/Kandi Heart/source/repos/WebAPI/Assignment/PokemonApp/Views/EditPokemonPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = PokemonApp.Views.EditPokemonPage.xaml
@@ -79,12 +73,6 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = PokemonApp.Views.NewPokemonPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\NewPokemonPage.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\NewPokemonPage.xaml
-
-[C:/Users/Kandi Heart/source/repos/WebAPI/Assignment/PokemonApp/Views/PokemonDetailPage.xaml]
-build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = PokemonApp.Views.PokemonDetailPage.xaml
-build_metadata.AdditionalFiles.TargetPath = Views\PokemonDetailPage.xaml
-build_metadata.AdditionalFiles.RelativePath = Views\PokemonDetailPage.xaml
 
 [C:/Users/Kandi Heart/source/repos/WebAPI/Assignment/PokemonApp/Views/PokemonsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

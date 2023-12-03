@@ -12,9 +12,7 @@ namespace PokemonApp
 
             Routing.RegisterRoute("pokemons", typeof(PokemonsPage));
             Routing.RegisterRoute("newpokemon", typeof(NewPokemonPage));
-            Routing.RegisterRoute("pokemon", typeof(PokemonDetailPage));
-            Routing.RegisterRoute("editpokemon", typeof(EditPokemonPage));
-            Routing.RegisterRoute("deletepokemon", typeof(DeletePokemonPage));
+            Routing.RegisterRoute(nameof(EditPokemonPage), typeof(EditPokemonPage));
             Routing.RegisterRoute("about", typeof(AboutPage));
             Routing.RegisterRoute("login", typeof(LoginPage));
         }

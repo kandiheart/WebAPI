@@ -69,6 +69,10 @@
               "target": "Package",
               "version": "[6.1.0, )"
             },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.2, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[7.0.0, )",
@@ -194,6 +198,10 @@
               "target": "Package",
               "version": "[6.1.0, )"
             },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.2, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[7.0.0, )",
@@ -263,6 +271,10 @@
             "Autofac.Extras.CommonServiceLocator": {
               "target": "Package",
               "version": "[6.1.0, )"
+            },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.2, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
@@ -334,6 +346,10 @@
             "Autofac.Extras.CommonServiceLocator": {
               "target": "Package",
               "version": "[6.1.0, )"
+            },
+            "CommunityToolkit.Mvvm": {
+              "target": "Package",
+              "version": "[8.2.2, )"
             },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",

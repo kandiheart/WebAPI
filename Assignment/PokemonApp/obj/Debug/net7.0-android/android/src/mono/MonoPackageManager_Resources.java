@@ -11,6 +11,7 @@ public class MonoPackageManager_Resources {
 		"Autofac.dll",
 		"Autofac.Extras.CommonServiceLocator.dll",
 		"CommonServiceLocator.dll",
+		"CommunityToolkit.Mvvm.dll",
 		"GoogleGson.dll",
 		"Microsoft.Extensions.Configuration.dll",
 		"Microsoft.Extensions.Configuration.Abstractions.dll",

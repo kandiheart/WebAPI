@@ -2,11 +2,31 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PokemonApp.Views.EditPokemonPage"
-             Title="EditPokemonPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:model="clr-namespace:PokemonApp.Models"
+             xmlns:views="clr-namespace:PokemonApp.Views"
+             xmlns:controls="clr-namespace:PokemonApp.Controls"
+             xmlns:viewModel="clr-namespace:PokemonApp.ViewModels"
+             x:DataType="viewModel:PokemonDetailViewModel"
+             Title="{Binding Pokemon.Name}">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="{Binding Pokemon.ImageURL}" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="60" HeightRequest="80" />
+
+            <VerticalStackLayout Margin="5,5" Spacing="10">
+                <Label Text="{Binding Pokemon.Name}" />
+                <Label Text="{Binding Pokemon.Type}" />
+                <Label Text="{Binding Pokemon.Description}" />
+                <Label Text="{Binding Pokemon.Attack}" />
+                <Label Text="{Binding Pokemon.Defense}" />
+                <Label Text="{Binding Pokemon.Stamina}" />
+                <Label Text="{Binding Pokemon.Region}" />
+                <Label Text="{Binding Pokemon.DexNumber}" />
+                <Label Text="{Binding Pokemon.ImageURL}" />
+            </VerticalStackLayout>
+
+            <Button HorizontalOptions="FillAndExpand" Text="Save" Command="{Binding SaveCommand}" Margin="10,15" />
+            <Button HorizontalOptions="FillAndExpand" Text="Cancel" Command="{Binding CancelCommand}" Margin="10,15" />
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

@@ -9,6 +9,7 @@ C:\Users\Kandi Heart\source\repos\WebAPI\Assignment\PokemonApp\bin\Debug\net7.0-
 C:\Users\Kandi Heart\source\repos\WebAPI\Assignment\PokemonApp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Autofac.dll
 C:\Users\Kandi Heart\source\repos\WebAPI\Assignment\PokemonApp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Autofac.Extras.CommonServiceLocator.dll
 C:\Users\Kandi Heart\source\repos\WebAPI\Assignment\PokemonApp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\CommonServiceLocator.dll
+C:\Users\Kandi Heart\source\repos\WebAPI\Assignment\PokemonApp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Mvvm.dll
 C:\Users\Kandi Heart\source\repos\WebAPI\Assignment\PokemonApp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.Configuration.dll
 C:\Users\Kandi Heart\source\repos\WebAPI\Assignment\PokemonApp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\Kandi Heart\source\repos\WebAPI\Assignment\PokemonApp\bin\Debug\net7.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.DependencyInjection.dll

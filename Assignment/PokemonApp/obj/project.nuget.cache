@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "31peQ0SwLcJliqUrBBr6rAGLvQ2oJUkHXtTZX3QVT1lCWs5E+AxSEh6Si6XAXrjvfRmU4FPXS+TOKYjdlegRSg==",
+  "dgSpecHash": "p6VYGaP56Cs69IkAEUiq0A+9LrgRx63OPb7cXYSps4bwZ5OAfexz1oUXmF13e04w0sb6dWaFYsvjqkuOt17aUg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Kandi Heart\\source\\repos\\WebAPI\\Assignment\\PokemonApp\\PokemonApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Kandi Heart\\.nuget\\packages\\autofac\\7.1.0\\autofac.7.1.0.nupkg.sha512",
     "C:\\Users\\Kandi Heart\\.nuget\\packages\\autofac.extras.commonservicelocator\\6.1.0\\autofac.extras.commonservicelocator.6.1.0.nupkg.sha512",
     "C:\\Users\\Kandi Heart\\.nuget\\packages\\commonservicelocator\\2.0.7\\commonservicelocator.2.0.7.nupkg.sha512",
+    "C:\\Users\\Kandi Heart\\.nuget\\packages\\communitytoolkit.mvvm\\8.2.2\\communitytoolkit.mvvm.8.2.2.nupkg.sha512",
     "C:\\Users\\Kandi Heart\\.nuget\\packages\\googlegson\\2.9.1.1\\googlegson.2.9.1.1.nupkg.sha512",
     "C:\\Users\\Kandi Heart\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\Kandi Heart\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
