@@ -46,7 +46,7 @@ namespace PokemonApp.ViewModels
 
         private async void OnCancel()
         {
-            await Shell.Current.GoToAsync("..");
+            await Shell.Current.GoToAsync("//pokemons");
         }
 
         private async void OnSave(object obj)

@@ -5,7 +5,8 @@
              Title="NewPokemonPage">
 
     <ContentPage.Content>
-        <StackLayout Spacing="6" Padding="15" Margin="0,20">
+        <ScrollView>
+            <StackLayout Spacing="6" Padding="15" Margin="0,20">
             <Label Text="{Binding AddAction}" FontSize="Large" FontAttributes="Bold" TextColor="Black" HorizontalOptions="Center" />
             <Grid Margin="30,10">
                 <Grid.ColumnDefinitions>
@@ -21,7 +22,7 @@
                     <RowDefinition Height="40" />
                     <RowDefinition Height="40" />
                     <RowDefinition Height="40" />
-                    <RowDefinition Height="40" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 
                 <Label Grid.Row="0" Grid.Column="0" Text="Name" VerticalOptions="Center" />
@@ -30,8 +31,8 @@
                 <Label Grid.Row="1" Grid.Column="0" Text="Type" VerticalOptions="Center" />
                 <Entry Grid.Row="1" Grid.Column="1" Text="{Binding Type}" Placeholder="Pokemon Type" />
 
-                <Label Grid.Row="2" Grid.Column="0" Text="Description" VerticalOptions="Center" />
-                <Entry Grid.Row="2" Grid.Column="1" Text="{Binding Description}" Placeholder="Pokedex Description" />
+                <Label Grid.Row="2" Grid.Column="0" Text="Dex Number" VerticalOptions="Center" />
+                <Entry Grid.Row="2" Grid.Column="1" Text="{Binding DexNumber}" Keyboard="Numeric"/>
 
                 <Label Grid.Row="3" Grid.Column="0" Text="Attack" VerticalOptions="Center" />
                 <Entry Grid.Row="3" Grid.Column="1" Text="{Binding Attack}" Keyboard="Numeric" />
@@ -45,11 +46,11 @@
                 <Label Grid.Row="6" Grid.Column="0" Text="Region" VerticalOptions="Center" />
                 <Entry Grid.Row="6" Grid.Column="1" Text="{Binding Region}" Placeholder="Region" />
 
-                <Label Grid.Row="7" Grid.Column="0" Text="Dex Number" VerticalOptions="Center" />
-                <Entry Grid.Row="7" Grid.Column="1" Text="{Binding DexNumber}" Keyboard="Numeric"/>
+                <Label Grid.Row="7" Grid.Column="0" Text="Image" VerticalOptions="Center" />
+                <Entry Grid.Row="7" Grid.Column="1" Text="{Binding ImageURL}" Placeholder="https://images.gameinfo.io/pokemon/256/p143f157.webp"/>
 
-                <Label Grid.Row="8" Grid.Column="0" Text="Image" VerticalOptions="Center" />
-                <Entry Grid.Row="8" Grid.Column="1" Text="{Binding ImageURL}" Placeholder="https://images.gameinfo.io/pokemon/256/p143f157.webp"/>
+                <Label Grid.Row="8" Grid.Column="0" Text="Description" VerticalOptions="Center" />
+                <Editor Grid.Row="8" Grid.Column="1" Text="{Binding Description}" Placeholder="Pokedex Description" HeightRequest="100" />
 
             </Grid>
             <StackLayout>
@@ -57,5 +58,6 @@
                 <Button HorizontalOptions="FillAndExpand" Text="Cancel" Command="{Binding CancelCommand}" Margin="10,15" />
             </StackLayout>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

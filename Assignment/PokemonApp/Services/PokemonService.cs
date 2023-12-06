@@ -120,7 +120,7 @@ namespace PokemonApp.Services
         {
             using (_client = new HttpClient())
             {
-                var response = await _client.PutAsync(BaseUrl + "/api/Pokemon", new StringContent(JsonConvert.SerializeObject(pokemon), Encoding.UTF8, "application/json"));
+                var response = await _client.PutAsync(BaseUrl + "/api/Pokemon/" + pokemon.Id, new StringContent(JsonConvert.SerializeObject(pokemon), Encoding.UTF8, "application/json"));
                 if (response.IsSuccessStatusCode)
                 {
                     var content = await response.Content.ReadAsStringAsync();

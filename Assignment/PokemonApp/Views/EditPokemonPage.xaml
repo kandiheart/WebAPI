@@ -10,23 +10,26 @@
              Title="{Binding Pokemon.Name}">
 
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout>
             <Image Source="{Binding Pokemon.ImageURL}" Aspect="AspectFill" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="60" HeightRequest="80" />
 
-            <VerticalStackLayout Margin="5,5" Spacing="10">
-                <Label Text="{Binding Pokemon.Name}" />
-                <Label Text="{Binding Pokemon.Type}" />
-                <Label Text="{Binding Pokemon.Description}" />
-                <Label Text="{Binding Pokemon.Attack}" />
-                <Label Text="{Binding Pokemon.Defense}" />
-                <Label Text="{Binding Pokemon.Stamina}" />
-                <Label Text="{Binding Pokemon.Region}" />
-                <Label Text="{Binding Pokemon.DexNumber}" />
-                <Label Text="{Binding Pokemon.ImageURL}" />
+                <VerticalStackLayout Margin="5,5" Spacing="10">
+                <Entry Text="{Binding Pokemon.Name}" />
+                <Entry Text="{Binding Pokemon.Type}" />
+                <Entry Keyboard="Numeric" Text="{Binding Pokemon.DexNumber}" />
+                <Entry Keyboard="Numeric" Text="{Binding Pokemon.Attack}" />
+                <Entry Keyboard="Numeric" Text="{Binding Pokemon.Defense}" />
+                <Entry Keyboard="Numeric" Text="{Binding Pokemon.Stamina}" />
+                <Entry Text="{Binding Pokemon.Region}" />
+                <Entry Text="{Binding Pokemon.ImageURL}" />
+                <Editor Text="{Binding Pokemon.Description}" HeightRequest="100" />
             </VerticalStackLayout>
 
             <Button HorizontalOptions="FillAndExpand" Text="Save" Command="{Binding SaveCommand}" Margin="10,15" />
             <Button HorizontalOptions="FillAndExpand" Text="Cancel" Command="{Binding CancelCommand}" Margin="10,15" />
+            
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

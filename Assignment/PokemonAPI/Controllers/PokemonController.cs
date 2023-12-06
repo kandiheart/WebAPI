@@ -120,7 +120,6 @@ namespace PokemonAPI.Controllers
                     return NotFound("Error updating data, Pokemon Id mismatch");
                 }
 
-                Foundpokemon.Id = Id;
                 if (pokemon.Name != "string") Foundpokemon.Name = pokemon.Name;
                 if (pokemon.Description != "string") Foundpokemon.Description = pokemon.Description;
                 if (pokemon.Type != "string") Foundpokemon.Type = pokemon.Type;
@@ -145,7 +144,6 @@ namespace PokemonAPI.Controllers
                     return NotFound("Error updating data, Pokemon Id mismatch");
                 }
 
-                Foundpokemon.Id = Id;
                 if (pokemon.Name != "string") Foundpokemon.Name = pokemon.Name;
                 if (pokemon.Description != "string") Foundpokemon.Description = pokemon.Description;
                 if (pokemon.Type != "string") Foundpokemon.Type = pokemon.Type;
